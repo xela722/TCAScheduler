@@ -1,0 +1,57 @@
+{%extends "base.html"%}
+{%block content%}
+<div class="container" style='padding-top: 25px'>
+    <h1 style='text-align:center; padding-bottom:10px'>Add new cleaning</h1>
+
+    <form action="/addEvent" method="post">
+        <div class="form-group">
+            <label for="inName">Name</label>
+            <input class='form-control' type="text" name="name" placeholder='Name' id="inName">
+        </div>
+        <div class="form-group">
+            <label for="inAddress">Address</label>
+            <input class='form-control' type="text" name='address' placeholder="Address" id='inAddress'>
+        </div>
+        <div class="form-group">
+            <label for="inCleaner">Cleaner</label>
+            <select placeholder='Cleaner' class='form-control' name="cleaner" id="cleaner">
+                <option value="" selected>Cleaner</option>
+                {%for cleaner in cleaners%}
+                    <option value={{cleaner.0}}>{{cleaner.0}}</option>
+                {%endfor%}
+            </select>      
+        </div>
+        
+        <div class="row">
+            <div class="form-group col-sm">
+                <label for="wkDay">Day of Week</label>
+                <select class='form-control' name="wkDay" id="wkDay">
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                </select>
+            </div>  
+            <div class="form-group col-sm">
+                <label for="timeSlot">Time</label>
+                <select name="timeSlot" id="timeSlot" class='form-control'>
+                    <option value="8:30">8:30</option>
+                    <option value="12:30">12:30</option>
+                </select>
+            </div>
+            <div class="form-group col-sm">
+                <label for="repeat">Repetition</label>
+                <select name="repeat" id="repeat" class='form-control'>
+                    <option value="0">Weekly</option>
+                    <option value="1">Bi-Weekly</option>
+                    <option value="2">Monthly</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class='form-control' type="submit">Submit</button>
+        </div>        
+    </form>
+</div>
+{%endblock%}

@@ -1,0 +1,38 @@
+- Color Code
+    - Orange - New client
+    - Black - Cancelled
+    - light blue - Special Notes
+    - Pea green - Monthly/As Needed
+
+- Each cleaner login
+    - Their schedule for the day
+
+- Each event has its own page
+    - name
+    - address
+    - Notes(if applicable)
+
+✔ Add event Functionality @done(18-11-19 16:29)
+    ✔ Add to DB @done(18-11-19 16:29)
+        ✔ Name @done(18-11-18 11:50)
+        ✔ Address @done(18-11-18 11:50)
+        ✔ DOW @done(18-11-18 11:50)
+        ✔ Time Slot @done(18-11-18 11:50)
+        ✔ RepeatTime @done(18-11-19 16:29)
+            ✔ Weekly @done(18-11-19 16:29)
+            ✔ Bi-Weekly @done(18-11-19 16:29)
+            ✔ Monthly @done(18-11-19 16:29)
+        ✔ Notes @done(18-11-19 16:29)
+        ✔ Color @done(18-11-19 16:29)
+
+- Schedule overview functionality
+    - Each client has row in table
+        - Background = Color code
+        - Clickable
+            - Cleaners
+                - View Event Page
+            - Owner
+                - Edit details
+    - View clients for that day only
+    - Able to change day
+    

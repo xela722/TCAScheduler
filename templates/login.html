@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    
+<div class="container">
+
+    {% if fail %}
+    <div class='error'>
+        <p>The username or password you provided was incorrect.</p>
+    </div>
+    {% endif%}
+
+    <div class="container-page" style='padding-top: 25px'>
+        <form action="/login" method="post">
+            <div class="form-group">
+                <label for="inUser">Username</label>
+                <input class='form-control' type="text" name="username" placeholder='Username' id="inUser">
+            </div>
+            <div class="form-group">
+                <label for="inPass">Password</label>
+                <input class='form-control' type="password" name="password" placeholder='Password' id='inPass'>
+            </div>
+            <div class="form-group">
+                <button class='form-control' type="submit">Submit</button>
+            </div>        
+        </form>
+
+        <p>Dont have an account? <a href="/register">Sign up.</a></p>
+    </div>
+</div>
+{%endblock%}
