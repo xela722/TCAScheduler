@@ -21,15 +21,13 @@
             </thead>
             <tbody>
                 {%for event in schedule%}
-                    <a href={{event.url}}>
-                        <tr>
-                            <td>{{event.name}}</td>
+                       <tr>
+			       <td><a href={{event.url}}>{{event.name}}</a></td><a>
                             <td>{{event.address}}</td>
                             <td>{{event.timeSlot}}</td>
                             <td>{{event.cleanerId}}</td>
                         </tr>
-                    </a>
-                {%endfor%}
+               {%endfor%}
             </tbody>
         </table>
         <a href='/addEvent'><img class='btn btn-lg' src="/static/open-iconic/svg/plus.svg" style="

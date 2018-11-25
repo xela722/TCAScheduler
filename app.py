@@ -70,7 +70,7 @@ def register():
             pHash = hashlib.sha256(request.form.get('password')).hexdigest()
             cur.execute("INSERT INTO users (user_id, user_email, user_hash, role) VALUES (?, ?, ?, ?)", (request.form.get("username"), request.form.get('email'), pHash, "user"))
             db.commit()
-            
+
             return redirect(url_for("login"))
         else:
             return render_template("register.html", userExists=True)
@@ -92,7 +92,8 @@ def addEvent():
             cur.fetchone()[0],
             request.form.get("wkDay"),
             request.form.get("timeSlot"),
-            request.form.get("repeat")
+            request.form.get("repeat"),
+            -1
         )
 
         cur.execute("INSERT INTO cleanings (name, address, cleanerId, dow, time, repeatId) VALUES (?,?,?,?,?,?)", (
@@ -110,7 +111,7 @@ def eventView(id):
     db=sqlite3.connect("data.db")
     cur = db.cursor()
     cur.execute("SELECT name, address, notes FROM cleanings WHERE oid=?", (id,))
-    
+
     return render_template("eventView.html")
 
 def getCleaners():
